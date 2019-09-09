@@ -1,11 +1,11 @@
 # 这是一个简易的ROM刷机包下载网站
 
 ##网站在线预览
-**[前台在线预览](106.13.218.180:8080/ROMMS)**
+[前台在线预览](106.13.218.180:8080/ROMMS) <br>
 
-**[后台在线预览](106.13.218.180:8080/ROMMS/admin/adminLogin.jsp)**
--后台帐号:admin123456
--密码:admin123456
+[后台在线预览](106.13.218.180:8080/ROMMS/admin/adminLogin.jsp)
+- 后台帐号:admin123456 <br>
+- 密码:admin123456
 
 ## 运行环境
 
@@ -16,16 +16,16 @@ mysql>=5.5
 ```
 
 ## 项目部署
-**-安装JDK并添加环境变量**
-**-下载对应版本[tomcat](https://tomcat.apache.org/)并解压至任意目录，最好不要中文目录**
-**-通过git clone克隆或者下载解压项目至tomcat站点目录，默认是weapps目录**
-**-创建romms数据库并导入sql**
-**-打开WEB-INF\classes\applicationContext.xml，配置数据库的相关信息**
-**-开启tomcat，浏览器访问localhost:8080/ROMMS**
-**-OVER!!!!!**
+**- 安装JDK并添加环境变量** <br>
+**- 下载对应版本[tomcat](https://tomcat.apache.org/)并解压至任意目录，最好不要中文目录** <br>
+**- 通过git clone克隆或者下载解压项目至tomcat站点目录，默认是weapps目录** <br>
+**- 创建romms数据库并导入sql** <br>
+**- 打开WEB-INF\classes\applicationContext.xml，配置数据库的相关信息** <br>
+**- 开启tomcat，浏览器访问localhost:8080/ROMMS** <br>
+**- OVER!!!!!**
 
 
 
-##网站效果图
+## 网站效果图<br>
 **前台：**<br>![1](./preview/front.png)
 **后台：**<br>![2](./preview/backend.png)
