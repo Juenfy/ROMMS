@@ -17,6 +17,7 @@ mysql>=5.5
 
 ## 项目部署
 
+```html
 1.  安装JDK并添加环境变量 <br>
 2.  下载对应版本[tomcat](https://tomcat.apache.org/)并解压至任意目录，最好不要中文目录 <br>
 3.  通过git clone克隆或者下载解压项目至tomcat站点目录，默认是weapps目录 <br>
@@ -24,7 +25,7 @@ mysql>=5.5
 5.  打开WEB-INF\classes\applicationContext.xml，配置数据库的相关信息 <br>
 6.  开启tomcat，浏览器访问localhost:8080/ROMMS <br>
 7.  OVER!!!!!
-
+```
 
 
 ## 网站效果图<br>
