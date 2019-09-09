@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+/*ROM详情头部*/
+.content .detailimg{display: none;width: 337px;height: 600px}
+.detailimg img{width: 337px;height: 600px}
+.row #coimg,.row #rominfo,.row #img,.row #comment #uimg,.row #comment #cc,.row #romreport{padding-top: 20px;padding-bottom: 20px}
+.row #coimg{padding-left:40px}
+.row #coimg img{width: 146px;height: 260px}
+.row #rominfo #rf .rf_bt{height: 30px;line-height: 30px}
+.row #rominfo #rf .rf_rt{height: 40px;display: inline-block;border-bottom: 1.5px solid #ff4040;font-size: 16px;color: #000;line-height: 40px;margin-bottom: 10px}
+.row #rominfo #rf .rf_btn a{margin-top: 15px;width: 200px;text-align: center}
+.row #rominfo #showromscore{text-align: center}
+.row #rominfo #showromscore #romsocre{font-size: 100px;color: #f75000}
+.row #rominfo #showromscore #noscore{font-size: 40px;color: #707070}
+.row #rominfo #showromscore #num{position: absolute;top: 220px;right:0px;left:0px}
+.row #romreport{position: absolute;left:35%}
+.row #romreport button{margin-top: 197px}
+/*ROM介绍*/
+.row #desctt,.row #uscore,.row #ucomment{height: 40px;line-height: 40px;text-align: center;width: 100px;background: #0080c0;color: #fff}
+#romdesc #img{text-align: center;border-top: 1px solid #0080c0;border-bottom: 1px solid #0080c0;margin-bottom: 30px}
+#romdesc #img img{width: 234.5px;height: 432.5px}
+
+/*用户评分*/
+li.star{font-size: 30px;width: 19%;color: #999999}
+li.active{color: gold}
+div>span.score{font-size: 16px}
+
+/*用户评论*/
+.row #comment{margin-top: 25px}
+.row #comment #uimg{height: 50px;padding-top: 0px}
+.row #comment #uimg img{width: 49px;height: 49px;border: 1px solid #c7c7c7}
+.row #comment #cc{padding: 0;margin-left: -20px}
+.row #comment #cc div{height: 25px}
+.row #comment #cc div>span{line-height: 25px}
+.row #nocomment{font-size: 18px;font-weight: 600!important;color: #6f6f6f}
+.row #nocomment,.row #pager{text-align: center}
+.row #pager{padding-top: 20px;line-height: 40px}
+.row #uctextare{height: 200px}
+.row #uctextare button{width: 100px;position: absolute;right: 15px;top:120px}
+
+/*右侧机型ROM排行榜模块*/
+.showmrc{width: 170px;position: fixed;top: 200px;right: 0px;z-index: 5;border-bottom: 1px solid #ddd;}
+.showmrc>div.tt{line-height: 40px;padding-left: 10px;font-size: 16px}
+.showmrc>ul>li{line-height: 30px;}
+.showmrc>ul>li>a{color: #717171;text-align: left;padding-left: 10px;}
+.hideli .mrcfd{display: none}
+.mrcimg>img{width: 52px;height: 92px;}
+.mrcinfo>p{font-size: 6px;line-height: 25px}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+	<context:component-scan base-package="com.jy"/>
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/romms">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/jy/entity/Comment.hbm.xml</value>
+				<value>com/jy/entity/Flashteach.hbm.xml</value>
+				<value>com/jy/entity/Model.hbm.xml</value>
+				<value>com/jy/entity/Rom.hbm.xml</value>
+				<value>com/jy/entity/Uitype.hbm.xml</value>
+				<value>com/jy/entity/User.hbm.xml</value>
+				<value>com/jy/entity/Mfture.hbm.xml</value>
+				<value>com/jy/entity/Question.hbm.xml</value>
+				<value>com/jy/entity/Romscore.hbm.xml</value>
+				<value>com/jy/entity/Phonenews.hbm.xml</value>
+				<value>com/jy/entity/Reply.hbm.xml</value>
+				<value>com/jy/entity/Myphone.hbm.xml</value>
+				<value>com/jy/entity/Android.hbm.xml</value>
+				<value>com/jy/entity/History.hbm.xml</value>
+				<value>com/jy/entity/Report.hbm.xml</value>
+				<value>com/jy/entity/Adapt.hbm.xml</value></list>
+		</property></bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" /></beans>

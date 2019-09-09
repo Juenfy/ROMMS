@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+.mui-slider-indicator{top: 95px}
+
+/*移动端首页*/
+.hot-models,.hot-roms,.all-mftures,.mui-grid-9,.rd-comment-textarea,.all-uitypes{background: #fff !important}
+.hot-models>h4,.hot-roms>h4,.all-mftures>h4,.all-uitypes>h4,.model-roms>h4,.rd-comment-textarea h4{display: block;height: 40px;line-height: 40px;font-weight: 200;text-indent: 10px}
+.model-box{height: 80px !important}
+.model-box img{height: 70px}
+.box .info,.box img{float: left;text-align: left}
+.model-info p{font-size: 10px}
+.model-info p:FIRST-CHILD {font-size: 12px;margin-bottom: 20px}
+.model-info p span{color: skyblue}
+.rom-box{height: 120px !important;text-align: left;text-indent: 5px;margin-top: 0px !important}
+.rom-box h5{margin-top: 0px;color: skyblue}
+.rom-box img{height: 100px;border: 0.5px solid #ddd;box-sizing: border-box}
+.rom-info p{font-size:12px;line-height: 20px}
+
+/*移动端ROM下载*/
+.all-mftures a{padding: 0 !important}
+.mfture-box{height: 25px !important;margin-top: 0px !important}
+.mfture-box img{height: 25px}
+
+/*机型ROM*/
+.rom-box span{font-size: 14px}
+.model-roms h4:FIRST-CHILD{background: #fff;border-bottom: 1px solid #ddd}
+.model-roms h4:FIRST-CHILD>span{color: skyblue;text-transform: uppercase}
+.model-roms h4:LAST-CHILD{background: #eee}
+.model-rom-box img{height: 140px}
+.model-rom-info p:LAST-CHILD{background: #eee;height: 25px;line-height: 25px;display: inline-block;margin-left: 100px;padding-right: 3px}
+.model-rom-info p:LAST-CHILD>span{font-size: 16px;color: #ff8c1a}
+
+/*ROM详情*/
+.rom-detail .model-rom-info{width: 190px}
+/* .rd-info{position: relative} */
+.rd-title{
+	height: 80px;
+	width:185px;
+	margin-left: 5px
+}
+.rd-title span,pre{
+	white-space: pre-wrap!important;
+	word-wrap: break-word!important;
+	*white-space:normal!important;
+}
+.rd-info button:LAST-CHILD {
+	margin-left: 10px
+}
+.rd-info p{font-size: 16px !important;line-height: 25px}
+.rd-info p:LAST-CHILD {
+	padding: 0px 20px;
+	height:60px;
+	line-height:60px;
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.rd-info p:LAST-CHILD>span{font-size: 24px}
+.rd-imgs img{height: 140px}
+.rd-imgs li{padding: 0 !important}
+.rd-imgs a{padding-bottom: 2px !important}
+
+/*UI专区*/
+.all-uitypes a{padding: 0 !important}
+.uitypes-box{margin-top: 0px !important;height: 60px !important}
+.uitypes-box img{width: 100px;height: 60px}
+
+/*用户主页*/
+.my_home_body{
+	background: url("../../images/background/myhomebg.jpg") 0 0 no-repeat;
+	background-size: cover;
+}
+.my_home_body .my_header{width: 100%;height: 150px;margin-top: 150px;background: #fff;position: relative;border: 1px solid #fff;box-sizing: border-box}
+.my_header img{height: 100px;width: 100px;display: block;border-radius: 50%;border: 2px solid #fff;position: absolute;left: 50%;margin-left: -50px;top: -50px}
+.my_header .user_info{margin-top: 50px;height: 100px;text-align: center;width: 100%;line-height: 14px}
+.user_info span{font-size: 14px;color: #8d8d8d;margin-top: 2px}
+.user_info span i{font-size: 13px}
+.user_info p{text-align: left;text-indent: 20px}
+

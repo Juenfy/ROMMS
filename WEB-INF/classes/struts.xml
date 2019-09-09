@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- PC端Action -->
+	<!-- 用户Action -->
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="userRegister" class="userAction" method="userRegister">
+			<result name="success" type="redirect">
+				<param name="location">/index.jsp</param>
+				<param name="reg_success">1</param>
+			</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="userLogin" class="userAction" method="userLogin">
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="findResetPasswdUser" class="userAction" method="findResetPasswdUser">
+			<result name="success">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="resetPasswd" class="userAction" method="resetPasswd">
+		</action>
+		<action name="showQuestion" class="userAction" method="showQuestion">
+			<result name="success">/module/showQuestion.jsp</result>
+		</action>
+		<action name="userLogout" class="userAction" method="userLogout">
+			<result name="success" type="redirect">
+				<param name="location">/index.jsp</param>
+			</result>
+		</action>
+		<action name="romAdaptApply" class="userAction" method="romAdaptApply">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showModelRom</param>
+				<param name="model.modelid">${adapt.model.modelid}</param>
+				<param name="mfture.mftureid">${adapt.model.mfture.mftureid}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showModelRom</param>
+				<param name="model.modelid">${adapt.model.modelid}</param>
+				<param name="mfture.mftureid">${adapt.model.mfture.mftureid}</param>
+				<param name="exists">1</param>
+			</result>
+		</action>
+	</package>
+	<!-- 管理员Action -->
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="adminLogin" class="adminAction" method="adminLogin">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMftureManager</param>
+				<param name="currentPage">1</param>
+			</result>
+			<result name="error" type="redirect">
+				<param name="location">adminLogin.jsp</param>
+				<param name="adminlogin">0</param>
+			</result>
+		</action>
+		<action name="adminLogout" class="adminAction" method="adminLogout">
+			<result name="success">adminLogin.jsp</result>
+		</action>
+		<!-- 手机管理模块 -->
+		<action name="showMftureManager" class="adminAction" method="showMftureManager">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="deleteMfture" class="adminAction" method="deleteMfture">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMftureManager</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showAddMfture" class="adminAction" method="showAddMfture">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="addMfture" class="adminAction" method="addMfture">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMftureManager</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showAddMfture</param>
+				<param name="addmfture">0</param>
+			</result>
+		</action>
+		<action name="showModelManager" class="adminAction" method="showModelManager">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="deleteModel" class="adminAction" method="deleteModel">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showModelManager</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showAddModel" class="adminAction" method="showAddModel">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="addModel" class="adminAction" method="addModel">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showModelManager</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showAddModel</param>
+				<param name="addmodel">0</param>
+			</result>
+		</action>
+		<!-- ROM管理模块 -->
+		<action name="showRomManager" class="adminAction" method="showRomManager">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="adminDeleteRom" class="developerAction" method="dperDeleteRom">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManager</param>
+			</result>
+		</action>
+		<action name="showRomUpCheck" class="adminAction" method="showRomUpCheck">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="showCheckRom" class="adminAction" method="showCheckRom">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="showRomDownCheck" class="adminAction" method="showRomDownCheck">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="romCheckResult" class="adminAction" method="romCheckResult">
+			<result name="d_success" type="redirectAction">
+				<param name="actionName">showRomDownCheck</param>
+				<param name="currentPage">1</param>
+			</result>
+			<result name="u_success" type="redirectAction">
+				<param name="actionName">showRomUpCheck</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="showRomAply" class="adminAction" method="showRomAply">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="deleteRomAply" class="adminAction" method="deleteRomAply">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomAply</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<!-- UI管理模块 -->
+		<action name="showUitypeManager" class="adminAction" method="showUitypeManager">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="deleteUitype" class="adminAction" method="deleteUitype">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showUitypeManager</param>
+			</result>
+		</action>
+		<action name="showAddUitype" class="adminAction" method="showAddUitype">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="addUitype" class="adminAction" method="addUitype">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showUitypeManager</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showAddUitype</param>
+				<param name="adduitype">0</param>
+			</result>
+		</action>
+		<!-- 教程、资讯管理模块 -->
+		<action name="showReleaseTN" class="adminAction" method="showReleaseTN">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="ReleaseTN" class="adminAction" method="ReleaseTN">
+			<result name="teach_success" type="redirectAction">
+				<param name="actionName">showTeach</param>
+			</result>
+			<result name="news_success" type="redirectAction">
+				<param name="actionName">showNews</param>
+			</result>
+		</action>
+		<action name="showNews" class="adminAction" method="showNews">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="showTeach" class="adminAction" method="showTeach">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="deleteTeachNews" class="adminAction" method="deleteTeachNews">
+			<result name="dt_success" type="redirectAction">
+				<param name="actionName">showTeach</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+			<result name="dn_success" type="redirectAction">
+				<param name="actionName">showNews</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<!-- 用户管理模块 -->
+		<action name="showAllUser" class="adminAction" method="showAllUser">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="showModifyUser" class="adminAction" method="showModifyUser">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="modifyUser" class="adminAction" method="modifyUser">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllUser</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showAddUser" class="adminAction" method="showAddUser">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="addUser" class="userAction" method="userRegister">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllUser</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 用户管理Action -->
+	<package name="userManager" namespace="/" extends="struts-default">
+		<action name="updateUname" class="userManagerAction" method="updateUname">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMyHome</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="model.modelid"></param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showMyHome</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="updateuname">0</param>
+				<param name="model.modelid"></param>
+			</result>
+		</action>
+		<action name="updateSign" class="userManagerAction" method="updateSign">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMyHome</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="model.modelid"></param>
+			</result>
+		</action>
+		<action name="updateUserimg" class="userManagerAction" method="updateUserimg">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showMyHome</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="model.modelid"></param>
+			</result>
+		</action>
+		<action name="showMyHome" class="userManagerAction" method="showMyHome">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+		<action name="showDataPerfection" class="userManagerAction" method="showDataPerfection">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+		<action name="userDataPerfection" class="userManagerAction" method="userDataPerfection">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showDataPerfection</param>
+			</result>
+		</action>
+		<action name="showSecuritySetting" class="userManagerAction" method="showSecuritySetting">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+		<action name="modifyPassword" class="userManagerAction" method="modifyPassword">
+			<result name="success">/index.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showSecuritySetting</param>
+				<param name="resetpasswd">0</param>
+			</result>
+		</action>
+		<action name="findModifyQuestionUser" class="userManagerAction" method="findModifyQuestionUser">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showSecuritySetting</param>
+				<param name="findmodifyquestionuser">1</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showSecuritySetting</param>
+				<param name="findmodifyquestionuser">0</param>
+			</result>
+		</action>
+		<action name="resetQuestion" class="userManagerAction" method="resetQuestion">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showSecuritySetting</param>
+				<param name="resetquestion">1</param>
+			</result>
+		</action>
+		<action name="showSystemAdvice" class="userManagerAction" method="showSystemAdvice">
+			<result name="success">/showUserManager.jsp</result>
+			<result name="error">/showUserManager.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 开发者Action -->
+	<package name="developer" namespace="/" extends="struts-default">
+		<action name="showDeveloperHome" class="developerAction" method="showDeveloperHome">
+			<result name="success">/showDeveloperHome.jsp</result>
+		</action>
+		<action name="showReleaseRom" class="developerAction" method="showReleaseRom">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+		<action name="releaseRom" class="developerAction" method="releaseRom">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManagerCenterSv</param>
+				<param name="user.userid">${rom.user.userid}</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="dperSaveRomEdit" class="developerAction" method="dperSaveRomEdit">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManagerCenterSv</param>
+				<param name="user.userid">${rom.user.userid}</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="showDperRomManagerSv" class="moduleAction" method="showDperRomManagerSv">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+		<action name="showDperRomManager" class="developerAction" method="showDperRomManager">
+			<result name="success">/module/showDperRomManager.jsp</result>
+		</action>
+		
+		<action name="showRomManagerCenterSv" class="moduleAction" method="showRomManagerModuleSv">
+			<result name="success" type="redirectAction">
+				<!-- 值为0不加载该模块 -->
+				<param name="actionName">showDperRomManagerSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="showrmcenter">1</param>
+				<param name="showbr">0</param>
+				<param name="showrl">0</param>
+				<param name="showuc">0</param>
+				<param name="modifyrom">0</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showRomListSv" class="moduleAction" method="showRomManagerModuleSv">
+			<result name="success" type="redirectAction">
+				<!-- 值为0不加载该模块 -->
+				<param name="actionName">showDperRomManagerSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="showrl">1</param>
+				<param name="showrmcenter">0</param>
+				<param name="showbr">0</param>
+				<param name="showuc">0</param>
+				<param name="modifyrom">0</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showBugReportSv" class="moduleAction" method="showRomManagerModuleSv">
+			<result name="success" type="redirectAction">
+				<!-- 值为0不加载该模块 -->
+				<param name="actionName">showDperRomManagerSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="showbr">1</param>
+				<param name="showrmcenter">0</param>
+				<param name="showrl">0</param>
+				<param name="showuc">0</param>
+				<param name="modifyrom">0</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showCommentManagerSv" class="moduleAction" method="showRomManagerModuleSv">
+			<result name="success" type="redirectAction">
+				<!-- 值为0不加载该模块 -->
+				<param name="actionName">showDperRomManagerSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="showuc">1</param>
+				<param name="showrmcenter">0</param>
+				<param name="showbr">0</param>
+				<param name="showrl">0</param>
+				<param name="modifyrom">0</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showDperModifyRomSv" class="moduleAction" method="showRomManagerModuleSv">
+			<result name="success" type="redirectAction">
+				<!-- 值为0不加载该模块 -->
+				<param name="actionName">showDperRomManagerSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="modifyrom">1</param>
+				<param name="showuc">0</param>
+				<param name="showrmcenter">0</param>
+				<param name="showbr">0</param>
+				<param name="showrl">0</param>
+				<param name="mtype">${mtype}</param>
+			</result>
+		</action>
+		<action name="showRomManagerCenter" class="developerAction" method="showRomManagerCenter">
+			<result name="success">/module/showDperRomManagerModule.jsp</result>
+		</action>
+		<action name="showRomList" class="developerAction" method="showRomList">
+			<result name="success">/module/showDperRomManagerModule.jsp</result>
+		</action>
+		<action name="showBugReport" class="developerAction" method="showBugReport">
+			<result name="success">/module/showDperRomManagerModule.jsp</result>
+		</action>
+		<action name="showCommentManager" class="developerAction" method="showCommentManager">
+			<result name="success">/module/showDperRomManagerModule.jsp</result>
+		</action>
+		<action name="cancelRomCheck" class="developerAction" method="cancelRomCheck">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManagerCenterSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="dperDeleteRom" class="developerAction" method="dperDeleteRom">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManagerCenterSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+		<action name="showDperModifyRom" class="developerAction" method="showDperModifyRom">
+			<result name="success">/module/showDperModifyRom.jsp</result>
+		</action>
+		<action name="dperAplyRomDown" class="developerAction" method="dperAplyRomDown">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomManagerCenterSv</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="currentPage">${currentPage}</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 手机品牌型号Action -->
+	<package name="mftureModel" namespace="/" extends="struts-default">
+		<action name="showMfture" class="mftureModelAction" method="showMfture">
+			<result name="success">/module/showMfture.jsp</result>
+		</action>
+		<action name="showModel" class="mftureModelAction" method="showModel">
+			<result name="success">/module/showModel.jsp</result>
+		</action>
+		<action name="showHostestModel" class="mftureModelAction" method="showHostestModel">
+			<result name="success">/module/showHostestModel.jsp</result>
+		</action>
+		<action name="hiddenModel" class="mftureModelAction" method="hiddenModel">
+			<result name="success">/module/hiddenModel.jsp</result>
+		</action>
+		<action name="showMftureModelSv" class="moduleAction" method="showMftureModelSv">
+			<result name="success">/showMftureModel.jsp</result>
+		</action>
+		<action name="showModelByMftureid" class="mftureModelAction" method="showModelByMftureid">
+			<result name="success">/module/showModelByMftureid.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showMftureModelSv</param>
+				<param name="nothing">1</param>
+			</result>
+		</action>
+		<action name="showModelSelectMenu" class="mftureModelAction" method="showModelSelectMenu">
+			<result name="success">/module/showModelSelectMenu.jsp</result>
+		</action>
+		<action name="showModelByMftureidSv" class="moduleAction" method="showModelByMftureidSv">
+			<result name="success">/showMftureModel.jsp</result>
+		</action>
+		<action name="modelChooseModule" class="mftureModelAction" method="modelChooseModule">
+			<result name="success">/module/modelSelectMenu.jsp</result>
+		</action>
+	</package>
+	
+	<!-- ROM Action -->
+	<package name="rom" namespace="/" extends="struts-default">
+		<action name="showHostestRom" class="romAction" method="showRomCharts">
+			<result name="success">/module/showHostestRom.jsp</result>
+		</action>
+		<action name="showUiTypeRom" class="romAction" method="showUiTypeRom">
+			<result name="success">showUitypeRom.jsp</result>
+			<result name="error">showUitypeRom.jsp</result>
+		</action>
+		<action name="showUitypeRomMfture" class="romAction" method="showUitypeRomMfture">
+			<result name="success">/module/showUitypeRomMfture.jsp</result>
+		</action>
+		<action name="showUitypeRomByMfture" class="romAction" method="showUitypeRomByMfture">
+			<result name="success">/showUitypeRom.jsp</result>
+		</action>
+		<action name="showUitypeRomAndroid" class="romAction" method="showUitypeRomAndroid">
+			<result name="success">/module/showUitypeRomAndroid.jsp</result>
+		</action>
+		<action name="showUitypeRomByAndroid" class="romAction" method="showUitypeRomByAndroid">
+			<result name="success">/showUitypeRom.jsp</result>
+		</action>
+		<action name="showHotestUitypeRom" class="romAction" method="showHotestUitypeRom">
+			<result name="success">/showUitypeRom.jsp</result>
+		</action>
+		<action name="showNewestUitypeRom" class="romAction" method="showNewestUitypeRom">
+			<result name="success">/showUitypeRom.jsp</result>
+		</action>
+		<action name="showModelRom" class="romAction" method="showModelRom">
+			<result name="success">/showModelRom.jsp</result>
+			<result name="error">/romAdapt.jsp</result>
+		</action>
+		<action name="showModelRomUitype" class="romAction" method="showModelRomUitype">
+			<result name="success">/module/showModelRomUitype.jsp</result>
+		</action>
+		<action name="showModelRomByUitype" class="romAction" method="showModelRomByUitype">
+			<result name="success">/showModelRom.jsp</result>
+		</action>
+		<action name="showModelRomAndroid" class="romAction" method="showModelRomAndroid">
+			<result name="success">/module/showModelRomAndroid.jsp</result>
+		</action>
+		<action name="showModelRomByAndroid" class="romAction" method="showModelRomByAndroid">
+			<result name="success">/showModelRom.jsp</result>
+		</action>
+		<action name="showHotestModelRom" class="romAction" method="showHotestModelRom">
+			<result name="success">/showModelRom.jsp</result>
+		</action>
+		<action name="showNewestModelRom" class="romAction" method="showNewestModelRom">
+			<result name="success">/showModelRom.jsp</result>
+		</action>
+		<action name="showRomDetail" class="romAction" method="showRomDetail">
+			<result name="success">/showRomDetail.jsp</result>
+		</action>
+		<action name="showModelRomCharts" class="romAction" method="showModelRomCharts">
+			<result name="success">/module/showModelRomCharts.jsp</result>
+		</action>
+		<action name="downloadNumAdd" class="romAction" method="downloadNumAdd">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="showRomCharts" class="romAction" method="showRomCharts">
+			<result name="success">/showRomCharts.jsp</result>
+		</action>
+	</package>
+	
+	<!-- UI类型Action -->
+	<package name="uiType" namespace="/" extends="struts-default">
+		<action name="showUiType" class="uiTypeAction" method="showUiType">
+			<result name="success">/showUiType.jsp</result>
+		</action>
+		<action name="showUiTypeSelect" class="uiTypeAction" method="showUiType">
+			<result name="success">/module/showUitypeSelect.jsp</result>
+		</action>
+		<action name="hiddenUiType" class="uiTypeAction" method="showUiType">
+			<result name="success">/module/hiddenUitype.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 教程、资讯Action -->
+	<package name="TN" namespace="/" extends="struts-default">
+		<action name="showPhoneNews" class="teachNewsAction" method="showPhoneNews">
+			<result name="success">/showTeachNews.jsp</result>
+		</action>
+		<action name="showFlashTeach" class="teachNewsAction" method="showFlashTeach">
+			<result name="success">/showTeachNews.jsp</result>
+		</action>
+		<action name="showTeachDetail" class="teachNewsAction" method="showTeachDetail">
+			<result name="success">/showTeachDetail.jsp</result>
+		</action>
+		<action name="showNewsDetail" class="teachNewsAction" method="showNewsDetail">
+			<result name="success">/showNewsDetail.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 我的手机Action -->
+	<package name="myPhone" namespace="/" extends="struts-default">
+		<action name="settingMyPhone" class="myPhoneAction" method="settingMyPhone">
+			<result name="success">/showModelRom.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 评论Action -->
+	<package name="comment" namespace="/" extends="struts-default">
+		<action name="userCommentRom" class="commentAction" method="userCommentRom">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="cmodule">rom</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<!-- <action name="userReply" class="replyAction" method="userReply">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="cmodule">rom</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action> -->
+		<action name="userCommentTeach" class="commentAction" method="userCommentTeach">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showTeachDetail</param>
+				<param name="teach.ftid">${comment.flashteach.ftid}</param>
+				<param name="cmodule">teach</param>
+				<param name="savehistory">0</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="userCommentNews" class="commentAction" method="userCommentNews">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showNewsDetail</param>
+				<param name="news.pnid">${comment.phonenews.pnid}</param>
+				<param name="cmodule">news</param>
+				<param name="savehistory">0</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="showUserComment" class="commentAction" method="showUserComment">
+			<result name="success">/module/showUserComment.jsp</result>
+		</action>
+		<action name="showMyComment" class="commentAction" method="showMyComment">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 反馈Action -->
+	<package name="report" namespace="/" extends="struts-default">
+		<action name="userReport" class="reportAction" method="userReport">
+			<result name="success" type="redirect">/showRomDetail.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 评分Action -->
+	<package name="romscore" namespace="/" extends="struts-default">
+		<action name="userRomscore" class="romscoreAction" method="userRomscore">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="currentPage">1</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">showRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="score">0</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="showRomscore" class="romscoreAction" method="showRomscore">
+			<result name="success">/module/showRomscore.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 搜索Action -->
+	<package name="search" namespace="/" extends="struts-default">
+		<action name="showSeachResult" class="searchAction" method="showSeachResult">
+			<result name="success">/showSearchResult.jsp</result>
+			<result name="error">/showSearchResult.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 历史浏览Action -->
+	<package name="history" namespace="/" extends="struts-default">
+		<action name="showHistory" class="historyAction" method="showHistory">
+			<result name="success">/showUserManager.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!-- 移动端Action -->
+	<package name="mobileModelMfture" namespace="/mobile" extends="struts-default">
+		<action name="mobileShowHostestModel" class="mftureModelAction" method="showHostestModel">
+			<result name="success">module/mobileShowHostestModel.jsp</result>
+		</action>
+		<action name="mobileShowRomDownload" class="mftureModelAction" method="mobileShowRomDownload">
+			<result name="success">mobileShowRomDownload.jsp</result>
+		</action>
+		<action name="mobileShowRomDownloadByMfid" class="mftureModelAction" method="mobileShowRomDownloadByMfid">
+			<result name="success">mobileShowRomDownload.jsp</result>
+		</action>
+	</package>
+	<package name="mobileRom" namespace="/mobile" extends="struts-default">
+		<action name="mobileShowHostestRom" class="romAction" method="showRomCharts">
+			<result name="success">module/mobileShowHostestRom.jsp</result>
+		</action>
+		<action name="mobileShowModelRom" class="romAction" method="showModelRom">
+			<result name="success">mobileShowModelRom.jsp</result>
+			<result name="error">mobileShowRomAdapt.jsp</result>
+		</action>
+		<action name="mobileShowNewestModelRom" class="romAction" method="showNewestModelRom">
+			<result name="success">mobileShowModelRom.jsp</result>
+		</action>
+		<action name="mobileShowHotestModelRom" class="romAction" method="showHotestModelRom">
+			<result name="success">mobileShowModelRom.jsp</result>
+		</action>
+		<action name="mobileShowRomDetail" class="romAction" method="showRomDetail">
+			<result name="success">mobileShowRomDetail.jsp</result>
+		</action>
+		<action name="mobileShowRomCharts" class="romAction" method="showRomCharts">
+			<result name="success">mobileShowRomCharts.jsp</result>
+		</action>
+		<action name="mobileShowRomscore" class="romscoreAction" method="showRomscore">
+			<result name="success">empty.jsp</result>
+		</action>
+		<action name="mobileShowUiType" class="uiTypeAction" method="showUiType">
+			<result name="success">mobileShowUiType.jsp</result>
+		</action>
+		<action name="mobileShowUiTypeRom" class="romAction" method="showUiTypeRom">
+			<result name="success">mobileShowUiTypeRom.jsp</result>
+			<result name="error">mobileShowUiTypeRom.jsp</result>
+		</action>
+		<action name="mobileShowNewestUitypeRom" class="romAction" method="showNewestUitypeRom">
+			<result name="success">mobileShowUiTypeRom.jsp</result>
+		</action>
+		<action name="mobileShowHotestUitypeRom" class="romAction" method="showHotestUitypeRom">
+			<result name="success">mobileShowUiTypeRom.jsp</result>
+		</action>
+	</package>
+	<package name="mobileUser" namespace="/mobile" extends="struts-default">
+		<action name="mobileUserRegister" class="userAction" method="userRegister">
+			<result name="success" type="redirect">
+				<param name="location">mobileIndex.jsp</param>
+			</result>
+			<result name="error">mobileRegister.jsp</result>
+		</action>
+		<action name="mobileShowQuestion" class="userAction" method="showQuestion">
+			<result name="success">../module/showQuestion.jsp</result>
+		</action>
+		<action name="mobileUserLogin" class="userAction" method="userLogin">
+			<result name="success" type="redirect">
+				<param name="location">mobileIndex.jsp</param>
+			</result>
+			<result name="error">mobileLogin.jsp</result>
+		</action>
+		<action name="mobileUserLogout" class="userAction" method="userLogout">
+			<result name="success">mobileIndex.jsp</result>
+		</action>
+		<action name="mobileShowUserComment" class="commentAction" method="showUserComment">
+			<result name="success">module/mobileShowUserComment.jsp</result>
+		</action>
+		<action name="mobileUserCommentRom" class="commentAction" method="userCommentRom">
+			<result name="success" type="redirectAction">
+				<param name="actionName">mobileShowRomDetail</param>
+				<param name="rom.romid">${rom.romid}</param>
+				<param name="user.userid">${user.userid}</param>
+				<param name="savehistory">0</param>
+				<param name="cmodule">rom</param>
+				<param name="currentPage">1</param>
+			</result>
+		</action>
+		<action name="mobileShowMyHome" class="userManagerAction" method="showMyHome">
+			<result name="success">mobileShowMyHome.jsp</result>
+		</action>
+	</package>
+</struts>    

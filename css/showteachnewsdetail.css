@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.tdetail .ttop{padding: 20px 0px}
+.ttop>.col-md-9>.pull-left{margin-top: 60px}
+
+.showmtc{width: 170px;position: fixed;top: 200px;right: 0px;z-index: 5}
+.showmtc>div.tt{line-height: 40px;padding-left: 10px;font-size: 16px}
+.showmtc>ul>li{line-height: 30px;}
+.showmtc>ul>li>a{color: #717171;text-align: left;padding-left: 10px;}
+.hideli .mtcfd{display: none}
+.mtcimg>img{width: 52px;height: 34px;}
+.mtcinfo>div{font-size: 6px}

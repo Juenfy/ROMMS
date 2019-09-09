@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+/*用户管理头部*/
+.content{min-height: 800px}
+.row .umbgimg{overflow: hidden}
+.row .test{height: 200px;position: absolute}
+.row .test .userimg{position: absolute;top:140px;left: 20px;z-index: 5}
+.row .test .userimg img{height: 148px;width: 148px;border: 2px solid #eff3f5;border-radius: 4px}
+.row #userinfo{margin-left: 160px;margin-bottom: 20px;text-align: left}
+.row #userinfo .uname{height: 30px;font-size: 16px;line-height: 30px;color: #353535}
+.row #userinfo .info-box{height: 20px;line-height: 20px;font-size: 12px;color: #707070}
+.row #userinfo div>img{width: 20px;height: 20px}
+#opnav{background: #24292e}
+#opnav a{color: #fff}
+#opnav a:hover,.active{color: #c8c9cb;border-bottom: 2px solid #fff;height: 59px}
+#opnav ul>li>a{line-height: 60px;font-size: 14px;display: block}
+.depnav ul>li{float:left;width: 12.5%}
+/*修改头像*/
+.row .ModifyUserimg .userimg{margin-left: 135px}
+.row .ModifyUserimg .userimg img{height: 148px;width: 148px}
+#opcontent{padding-bottom: 20px}
+/*我的主页*/
+.myphones{margin-top: 10px}
+
+/*我的评论*/
+#opcontent #mycomment div{line-height: 40px;border-bottom: 1px solid #808080}
+
+/*历史浏览*/
+#opcontent>.hismodel,.roms,.histeach,.hisnews{overflow: hidden}
+#opcontent .histt{height: 40px;line-height: 40px;text-align: center;background: #0080c0;color: #fff}
+
+/*完善资料*/
+#fieldsetDisabled span{line-height: 34px}
+/*发布ROM*/
+.row #saverom{margin-bottom: 60px}
+.form-group .tips{height: 36px;line-height: 36px}
+.form-group .romdesctips{height: 176px;line-height: 176px}
+.romimg .coimg,.romimg .limg,.romimg .img{width: 105px;height: 179px;border: 5px dashed gray;margin-bottom: 40px}
+.form-group .romimg .img{margin-left: 10px}
+.form-group .romimg input{display: none}
+.form-group .romimg div>a>img{height: 169px;width: 95px;position: absolute;left: 0px}
+.romimg .coimg>a>img{margin-left: 20px}
+.form-group .romimg div>div{line-height: 40px;text-align: center;color: #5f5f5f}
+.form-group .romimg .img img,.form-group .romimg .limg img{left: 0px}
+.form-group .romimg div>a{height: 169px;width: 95px;color: #999;display: inline-block;font-size: 50px;line-height: 169px;text-align: center;margin-left: -15px}
+.form-group .romimg div>a.cover{margin-left: 0px}
+.form-group .romimg div>a:hover{background: #eee}
+
+/*ROM管理*/
+.managerop>ul{border: 1px solid #ddd;margin-top: 10px}
+.managerop>ul>li{border-bottom: 1px solid #ddd}
+.managerop>ul>li:last-child{border-bottom: none;}
+.managerop>ul>li>a{color: #666}
+/*ROM管理》管理中心*/
+.sdprmm img.coimg{height: 124px;width: 70px}
+/*ROM管理》ROM列表*/
+.sdprmm img.moimg{height: 100px;width: 70px}
+.sdprmm a.btn{width: 100px}

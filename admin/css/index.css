@@ -1,0 +1,51 @@
+a,a:link,a:hover,a:visited,a:active,button,img,iframe,img{text-decoration: none;cursor: pointer;list-style: none}
+body{
+	background: #f3f3f3;
+	background-image: -webkit-image-set(url("../../images/background/bg1x.png") 1x,url("../../images/background/bg2x.png") 2x);
+	background-size: 100px;
+	background-repeat: repeat;
+    color: rgb(102, 102, 102)
+}
+/*给div添加阴影*/
+.box-shadow{
+    box-shadow: 0 9px 30px -6px rgba(0,0,0,.2), 0 18px 20px -10px rgba(0,0,0,.04), 0 18px 20px -10px rgba(0,0,0,.04), 0 10px 20px -10px rgba(0,0,0,.04);
+}
+.form-group span{line-height: 34px}
+.head{height: 75px;font-size: 16px;line-height: 75px}
+.head>.row>.col-md-3>img{max-width: 130px;margin-left: 15px}
+.left>.row>p>img{width: 140px;height: 140px}
+.head>.row>.col-md-5>ul>li>a:hover{border-bottom: 1px solid #ddd;height: 74px}
+.body>.row>.left,.content{min-height: 560px;margin-top: -10px;margin-left: 20px}
+.left>ul>li>a{line-height: 50px;}
+.head>.row>.col-md-5>ul>li>a,.left>ul>li>a,.panel-body>a{color: #485a6a}
+.left>ul>li>a>i{font-size: 20px}
+.left>ul>li>a>i,.panel-body>a>i{color: #a7bdcd}
+.left>ul>li>a>i.fa-caret-down{position: absolute;right: 20px;margin-top: 15px}
+.panel-body>a{padding-left: 15px}
+
+/*手机管理模块*/
+.mfmm img{width: 104px;height: 45px}
+.mdmm img{width: 70px;height: 100px}
+
+/*添加*/
+.add-box{margin-top: 100px}
+.add-box input[type='file']{display: none}
+.addpic{border: 2px dashed gray}
+.addpic>a{display: block;color: #999}
+.addpic>a:hover{background: #eee;}
+.addmfpic>a{line-height: 46px;height: 46px;font-size: 20px}
+.addmdpic>a{line-height: 96px;height: 96px;font-size: 30px}
+.addutpic>a{line-height: 76px;height: 76px;font-size: 25px}
+.addpic>a>img{position: absolute;width: 100%;left: 0px}
+.addmfpic>a>img{height: 46px}
+.addutpic>a>img{height: 76px}
+.addmdpic>a>img{height: 96px}
+.add-box button{width: 100%}
+
+/*ROM管理模块*/
+.rommm img{height: 100px;width: 56px}
+.rcheck a.btn{width: 120px}
+/*UI管理模块*/
+.uitypemm img{height: 60px;width: 100px}
+
+.foot{margin-top: 60px}

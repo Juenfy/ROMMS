@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.content{min-height: 800px}
+#mfture,#mfture a,#othersmf,#othersmf a,#model,#model a{padding:10px}
+#model .col-md-8>div{text-align: left}
+#model .col-md-8>div.name{font-size: 16px;color: #3f3f3f;height: 64px;line-height: 32px}
+#model .col-md-8>div.info{color: #666;font-size: 12px}
+#othersmf a{line-height: 43px;width: 100%;display: block;border: 1px solid #ddd}
+#mfture a{background: #eff3f5;display: inline-block;height: 65px}
+#mfture a:hover{border: 2px solid #00c100;box-sizing: border-box}
+#model a:hover{background: #dedede;border-radius: 4px}
+#model #img img{width: 70px;height: 100px}
+#mfture a>img{width: 104px;height: 45px}
+
+.othersmf{position: absolute;border: 1px solid #ddd;background: #fff;z-index: 5;top: -10px;display: none}
+#othersmf>a>i.fa-caret-up{display: none}

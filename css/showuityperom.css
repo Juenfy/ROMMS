@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+.content{min-height: 800px}
+.roms .rom,.row #uiimg{padding-top: 20px;padding-bottom: 20px}
+.row #uiimg img{height: 100px;width: 161px} 
+.row #uitypeinfo{padding-top: 10px;margin-top: 20px}
+.catalogs,.roms .rom .romtitle{line-height: 42px}
+.roms .rom .romtitle>a{font-size: 18px;color: #000}
+.roms .rom .romtitle>a:hover{color: #00a0e9;text-decoration: underline}
+.row .catalogs{height:42px;padding-top: 10px}
+.row .px{margin-bottom: 10px}
+.mftures{margin-top: 10px}
+.mftures img{width: 90px;height: 40px}
+.mftures a.img{background: #eff3f5;display: inline-block;height: 42px}
+.mftures a.img:hover{border: 1px solid #00c100;box-sizing: border-box}
+.roms .coimg img{width: 123px; height: 219px;margin-bottom: 10px}
+.roms .rom{border-bottom: 1px solid #cdcdcd}
+.rominfo{padding-top: 40px;margin-left: -20px}
+.rominfo>p>span.romscore{font-size: 50px;color: #ff5a0b;margin-left: -10px}
+.rominfo>p>span.null{font-size: 40px;color: #666}

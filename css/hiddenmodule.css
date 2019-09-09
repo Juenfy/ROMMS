@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+.hidmodel,.hiduitype{position: absolute;background: #fff;top: 80px;z-index:8;height: 280px;overflow-y: auto;display: none;border: 1px solid #ddd}
+/*型号模块*/
+#hidmodel,#hidmodel a{padding:10px}
+#hidmodel .col-md-8>div{text-align: left}
+#hidmodel .col-md-8>div.name{font-size: 14px;color: #3f3f3f;height: 64px;line-height: 32px;}
+#hidmodel .col-md-8>div.info{color: #666;font-size: 12px}
+#hidmodel a:hover{background: #dedede;border-radius: 5px}
+#hidmodel #img img{width: 70px;height: 100px}
+
+/*UI专区模块*/
+#hiduiimg{height: 165px}
+.hiduitype>.row{margin-top: 10px}

@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+.content .imglunbo,.content #uitt{margin-bottom: 20px}
+.content .imglunbo,.content .ui{display: inline-block}
+.content .imglunbo ol{z-index: 2}
+.content .imglunbo,.content .imglunbo img{width: 627px;height: 300px}
+.video,.content .imglunbo img{border-radius: 5px}
+.content .imglunbo a{background: none}
+.content .imglunbo a:hover{background: rgba(0,0,0,.1)}
+
+
+.ui{width: 358px;height: 300px;float:right}
+.ui>.video{width: 165px;height: 143px;float: right;margin-left: 12px;margin-bottom: 10px;border: 1px solid #ddd;background-position: center}
+.ui>.miui10{background:url("../uivideo/miui10_video.png")}
+.ui>.flyme7{background:url("../uivideo/flyme7_video.png")}
+.ui>.funtouchos4{background:url("../uivideo/funtouchos4_video.png")}
+.ui>.coloros5{background:url("../uivideo/coloros5_video.png")}
+.video_play{display: none;background-image: url("../uivideo/video_play.png");background-repeat: no-repeat;height: 143px;width: 165px;background-position: center;border-radius: 5px;float:left}
+.video a{height: 143px;width: 165px;display: block}
+.video a:hover>.video_play{display: block;background-color: rgba(28,28,28,0.5)}
+
+
+.content #uitt{border-bottom: 1px solid #26b9ff;background: #fff}
+.content #uitt #dzyh{height: 40px;line-height: 40px;text-align: center;width: 100px;background: #0080c0;color: #fff}
+.uiimg{height: 190px}

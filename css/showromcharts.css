@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+.content{min-height: 800px}
+.row #coimg,.row #rominfo{padding-top:40px}
+.row #coimg{padding-left: 120px;text-align: center}
+.row #coimg #model{font-size: 18px;font-weight: 600!important;margin-bottom: 20px}
+.row #coimg img{width: 225px;height: 400px}
+.row #rominfo .rc_android{height: 20px;line-height: 20px;margin-bottom: 40px;border-bottom: 1.5px solid #ff4040;display: inline-block;font-size: 16px;color: #000}
+.row #rominfo .rc_tt{height: 45px;line-height: 45px;border-bottom: 1px solid #bbbbbb;font-size: 12px}
+.row #rominfo .rc_btn a{margin-top: 25px;width: 200px;text-align: center}

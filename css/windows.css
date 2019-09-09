@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+ .Login,.Register,.FindResetPasswdUser,.ResetPasswd,.Modify,.romAdapt{
+    width: 420px;
+    padding: 10px;
+    display: none
+}
+
+.input-box{
+    margin-top: 12px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block
+}
+.input-box input,.input-box select{
+    width: 340px;
+    height: 32px;
+    margin-left: 40px;
+    color: #666;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding-left: 42px
+}
+
+.input-box input:hover{
+    border: 1px solid #ff7d0a
+}
+
+.input-box input:after{
+    border: 1px solid #ff7d0a
+}
+.input-box .icon{
+    width: 24px;
+    line-height:24px;
+    margin-left:44px;
+    margin-top:4px;
+    display: inline-block;
+    position: absolute;
+    border-right: 1px solid #dcdcdc
+}
+.input-box .icon i{margin-left: 5px;color: #666}
+.radio-box{
+	margin-top: 12px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: center
+}
+
+.button-box{
+    margin-top: 12px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block
+}
+
+.button-box button{
+    font-size: 16px;
+    width: 340px;
+    margin-left: 40px
+}
+
+.box_bottom{
+    margin-top: 40px;
+    text-align: center
+}
+
+.box_bottom a{
+    margin: 30px;
+    color: #4a4744;
+    font-size: 13px;
+    text-decoration: none
+}
+
+.box_bottom a:hover{
+    color: #ff7d0a
+}
+
+.box_bottom a:active{
+    color: #ee7204
+}
